@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Bree+Serif&family=Changa:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Changa:wght@200..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Lobster&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMarker</title>
+    <link  rel="shortcut icon" href="images/bookmark.png" type="image/x-icon">
+</head>
+
+<body class="position-relative">
+    
+    <h1 class=" h1 mb-4">BookMarker</h1>
+    <hr>
+    <h2 class="text-center my-4"><i class="fa-solid fa-bookmark icon"></i>
+        <span>Bookmark your favorite sites </span>
+        <i class="fa-solid fa-bookmark icon"></i>
+    </h2>
+
+    <div class="inputs mt-5 ">
+        <Label> <i class="fa-solid fa-book-bookmark"></i><span>Site Name</span></Label>
+        <input type="text" class="form-control my-3" id="site-name" oninput="validationName()" placeholder="WebSite Name">
+    </div>
+    <div class="inputs mt-3 ">
+        <Label> <i class="fa-solid fa-link"></i><span>Site URL</span></Label>
+        <input type="text" class="form-control my-3" oninput="validationUrl()" id="site-url" placeholder="WebSite URL">
+    </div>
+
+    <div class="submit-btn d-grid mt-5">
+        <button class="btn m-auto px-5" onclick="add()" id="sumbtn">Submit</button>
+    </div>
+    <hr class="mt-4">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 m-auto">
+                <table class="table text-center table-striped ">
+                    <thead>
+                        <tr class="">
+                            <th>Index</th>
+                            <th>Website Name</th>
+                            <th>Visit</th>
+                            <th>Delete</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="demo">
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+ <div class="box bg-dark bg-opacity-50 w-100 position-absolute  d-flex end-0 top-0 justify-content-center align-items-center">
+    <div class="mybox bg-white p-4">
+        <div class="d-flex justify-content-between">
+         <div class="circle d-flex gap-2 mt-2">
+             <div class="red rounded-circle bg-danger"></div>
+             <div class="yellow rounded-circle bg-warning"></div>
+             <div class="green rounded-circle bg-success"></div>
+         </div>
+         <button class="btn close-icon"  >
+             <i class="fa-solid fa-xmark close fs-3"></i>
+         </button>
+        </div>
+        <p class="mt-3 ">Site Name or Url is not valid, Please follow <br> the rules below :</p>
+        <span class=""> <i class="fa-regular fa-circle-right p-2 text-danger "></i> Site name must contain at least 3 characters</span><br>
+        <span class=""> <i class="fa-regular fa-circle-right p-2 text-danger "></i> Site name must contain at least 3 characters</span>
+     
+     </div>
+ </div>
+   
+    <script src="js/main.js"></script>
+</body>
+
+</html>

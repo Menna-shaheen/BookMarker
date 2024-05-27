@@ -1,0 +1,162 @@
+body {
+height: 110vh;
+  background-color: #eeeeee;
+}
+
+.h1 {
+
+  color: #393e46;
+  text-align: center;
+  font-family: "Lobster", sans-serif;
+
+  position: relative;
+  margin: auto;
+  width: fit-content;
+  font-size: 50px;
+}
+
+.h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #929aab;
+  width: 100%;
+  height: 30%;
+  z-index: -1;
+  border: 1px solid #929aab;
+  border-radius: 3px;
+  transition: all 0.3s;
+}
+
+.h1:hover::after {
+  height: 65%;
+}
+
+hr {
+  border-top: 4px solid #0e0d0c;
+  border-style: dashed;
+  background-color: #93B1A6;
+  width: 80%;
+  margin: auto;
+}
+
+h2 {
+  background-image: linear-gradient(to right, #000000, #bdb9be);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Josefin Sans", sans-serif;
+
+}
+
+.inputs {
+  margin-left: 10%;
+}
+
+.inputs input {
+  width: 90%;
+}
+
+.form-control {
+  border: 2px solid #393e46;
+}
+
+.form-control:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #929aab;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(146, 154, 171, 0.6);
+  box-shadow: 10px 10px 5px -3px rgba(146, 154, 171, 0.6) !important;
+}
+
+table thead {
+  font-family: "Josefin Sans", sans-serif;
+
+}
+
+.myform {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.inputs label {
+  color: #393e46;
+}
+
+
+.submit-btn .btn {
+  color: #929aab;
+  background: #393e46;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+
+}
+
+.submit-btn .btn:hover {
+  color: #393e46;
+  background-color: #929aab;
+}
+
+@media (max-width:991px) {
+  h2 {
+    font-size: 22px;
+  }
+
+  table thead {
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .box .mybox p {
+    font-size: 14px;
+  }
+
+  .box .mybox span {
+    font-size: 14px;
+  }
+}
+
+.box {
+  bottom: -10%;
+  left: 0;
+  height: 110vh;
+  z-index: 555;
+  opacity: 0;
+  z-index: -1;
+}
+
+.box p {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "Bree Serif", serif;
+}
+
+.mybox {
+  width: auto;
+  border: 1px transparent solid;
+  border-radius: 10px;
+  height: fit-content;
+
+  span {
+    font-size: 20px;
+  }
+}
+
+.circle .red,
+.green,
+.yellow {
+  width: 20px;
+  height: 20px;
+
+}
+
+.clear {
+  opacity: 0;
+  z-index: -1;
+}
+
+.appear {
+  opacity: 1;
+  z-index: 5;
+}

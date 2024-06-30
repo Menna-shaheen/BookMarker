@@ -102,4 +102,9 @@ function checking() {
 
 
 closebtn.addEventListener("click",checking)
+document.addEventListener('keydown' , function(e){
+    if(e.key == 'Escape'){
+        checking()
+    }
+} )
 
